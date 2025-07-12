@@ -1,0 +1,71 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import Image from "astro/components/Image.astro";
+import post05Img from "@/images/post-05.png";
+import { Picture } from "astro:assets";
+---
+
+<MainLayout title="Imagenes">
+  <h1 class="text-white text-5xl">Imagenes</h1>
+
+  <img
+    loading="eager"
+    src="/assets/images/post-05.png"
+    alt="Imagen de prueba"
+    width="250"
+    height="250"
+  />
+  <h1 class="text-white text-5xl">Quality: low</h1>
+  <Image
+    src={post05Img}
+    quality="low"
+    style={{
+      width: 250,
+      height: 250,
+    }}
+    alt="Imagen de prueba"
+  />
+  <h1 class="text-white text-5xl">Quality: high</h1>
+  <Image
+    src={post05Img}
+    width={250}
+    height={250}
+    quality="high"
+    alt="Imagen de prueba"
+  />
+
+  <h1 class="text-white text-5xl">Formatos</h1>
+  <Image
+    src={post05Img}
+    width={250}
+    height={250}
+    format="heif"
+    alt="Imagen de prueba"
+  />
+
+  <h1 class="text-white text-5xl">Picture</h1>
+  <!-- widths={[240, 540, 720, post05Img.width]}
+  sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${post05Img.width}px`} -->
+  <Picture
+    src={post05Img}
+    height={250}
+    alt="Imagen de prueba"
+    width={post05Img.width / 2}
+    densities={[1.5, 2]}
+  />
+
+  <div
+    style={{
+      height: "3000px",
+    }}
+  >
+  </div>
+
+  <img
+    loading="lazy"
+    src="/assets/images/post-05.png"
+    alt="Imagen de prueba"
+    width="250"
+    height="250"
+  />
+</MainLayout>
