@@ -3,7 +3,7 @@ import type { GetStaticPaths } from "astro";
 import TypedBlogPost from "@/components/TypedBlogPost.astro";
 import { siteConfig } from "@/config/site-config";
 import MainLayout from "@/layouts/MainLayout.astro";
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 export const getStaticPaths = (async () => {

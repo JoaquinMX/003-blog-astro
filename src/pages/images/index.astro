@@ -1,7 +1,7 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
-import Image from "astro/components/Image.astro";
-import post05Img from "@/images/post-05.png";
+import { Image } from "astro:assets";
+import post05Img from "../../assets/images/post-05.png";
 import { Picture } from "astro:assets";
 ---
 
@@ -32,6 +32,7 @@ import { Picture } from "astro:assets";
     height={250}
     quality="high"
     alt="Imagen de prueba"
+    format="webp"
   />
 
   <h1 class="text-white text-5xl">Formatos</h1>
@@ -39,7 +40,7 @@ import { Picture } from "astro:assets";
     src={post05Img}
     width={250}
     height={250}
-    format="heif"
+    format="webp"
     alt="Imagen de prueba"
   />
 
